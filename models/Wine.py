@@ -1,8 +1,4 @@
 from databaseSet import db
-from models.Color import Color
-from models.Cepage import Cepage
-from models.Appellation import Appellation
-from models.Provider import Provider
 
 
 class Wine(db.Model):

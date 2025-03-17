@@ -7,7 +7,8 @@ class Orders(db.Model):
     idOrders = db.Column(db.Integer, primary_key=True, autoincrement=True)
     date = db.Column(db.Date, default=datetime.utcnow, nullable=False)
     status = db.Column(db.String(20), nullable=False)
-    Customer_idCustomer = db.Column(db.Integer, db.ForeignKey('Customer.idCustomer'), nullable=False)
+    Customer_idCustomer = db.Column(db.Integer, db.ForeignKey('Customer.idCustomer'), nullable=True)
+    Provider_idProvider = db.Column(db.Integer, db.ForeignKey('Provider.idProvider'), nullable=True)
 
     # Relationship to OrderDetail
     order_details = db.relationship('OrdersDetail', backref='Orders', lazy=True)
