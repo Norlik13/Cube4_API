@@ -40,9 +40,9 @@ class ProviderList(Resource):
 @api.param('provider_id', 'L\'ID du fournisseur')
 class WineResource(Resource):
     @api.doc('delete_provider')
-    def delete(self, wine_id):
-        wine = Provider.query.get(wine_id)
-        db.session.delete(wine)
+    def delete(self, provider_id):
+        provider = Provider.query.get(provider_id)
+        db.session.delete(provider)
         db.session.commit()
         return jsonify({'message': 'Fournisseur supprimé'})
 

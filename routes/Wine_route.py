@@ -50,7 +50,6 @@ class WineList(Resource):
     @api.doc('create_wine')
     def post(self):
         data = request.get_json()
-        print(data)
         wine = Wine(
             provider_price=data['provider_price'],
             selling_price=data['selling_price'],
